@@ -1,0 +1,3 @@
+[submodule "vehicle-service"]
+	path = vehicle-service
+	url = git@10.90.60.209:web/vehicle-service
