@@ -2,11 +2,153 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.1.RELEASE</version>
+    </parent>
 
     <groupId>com.hx2car</groupId>
     <artifactId>hx2car</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>buyCars-service</module>
+        <module>saleCars-service</module>
+        <module>vehicle-service</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+
+        <commons-httpclinet.version>3.1</commons-httpclinet.version>
+        <fastjson.version>1.2.9</fastjson.version>
+        <hxcore.version>0.0.10</hxcore.version>
+        <dubbo-spring-boot-starter.version>0.2.0</dubbo-spring-boot-starter.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
+        <lombok.version>1.18.10</lombok.version>
+        <swagger-bootstrap-ui.version>1.9.5</swagger-bootstrap-ui.version>
+
+        <spring-boot-starter-aop.version>1.9.5</spring-boot-starter-aop.version>
+        <sharding-jdbc-core.version>2.0.3</sharding-jdbc-core.version>
+        <sharding-jdbc-core-spring-namespace.version>2.0.3</sharding-jdbc-core-spring-namespace.version>
+        <druid.version>1.0.12</druid.version>
+        <tair-client.version>2.3.4.49</tair-client.version>
+        <common-tair.version>2.2.4.6</common-tair.version>
+        <jsr305.version>1.3.9</jsr305.version>
+        <mina-core.version>1.1.7</mina-core.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency><dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>commons-httpclient</groupId>
+                <artifactId>commons-httpclient</artifactId>
+                <version>${commons-httpclinet.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hx-core</groupId>
+                <artifactId>hxcore</artifactId>
+                <version>${hxcore.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>swagger-bootstrap-ui</artifactId>
+                <version>${swagger-bootstrap-ui.version}</version>
+            </dependency>
+
+            <!-- sharding-jdbc-core -->
+            <dependency>
+                <groupId>io.shardingjdbc</groupId>
+                <artifactId>sharding-jdbc-core</artifactId>
+                <version>${sharding-jdbc-core.version}</version>
+            </dependency>
+            <!-- sharding-jdbc-spring-namespace -->
+            <dependency>
+                <groupId>io.shardingjdbc</groupId>
+                <artifactId>sharding-jdbc-core-spring-namespace</artifactId>
+                <version>${sharding-jdbc-core-spring-namespace.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.taobao</groupId>
+                <artifactId>tair-client</artifactId>
+                <version>${tair-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.taobao</groupId>
+                <artifactId>common-tair</artifactId>
+                <version>${common-tair.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>${jsr305.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.mina</groupId>
+                <artifactId>mina-core</artifactId>
+                <version>${mina-core.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

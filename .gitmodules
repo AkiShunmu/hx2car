@@ -4,3 +4,6 @@
 [submodule "saleCars-service"]
 	path = saleCars-service
 	url = git@10.90.60.209:web/saleCars-service.git
+[submodule "buyCars-service"]
+	path = buyCars-service
+	url = git@10.90.60.209:web/buyCars-service.git
