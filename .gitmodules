@@ -13,3 +13,9 @@
 [submodule "pubnet-service"]
 	path = pubnet-service
 	url = git@10.90.60.209:web/pubnet-service.git
+[submodule "send-service"]
+	path = send-service
+	url = git@10.90.60.209:web/send-service.git
+[submodule "scheduler-service"]
+	path = scheduler-service
+	url = git@10.90.60.209:web/scheduler-service.git

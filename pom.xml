@@ -34,8 +34,8 @@
         <dubbo-spring-boot-starter.version>0.2.0</dubbo-spring-boot-starter.version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
-        <lombok.version>1.18.10</lombok.version>
         <swagger-bootstrap-ui.version>1.9.5</swagger-bootstrap-ui.version>
+        <lombok.version>1.18.10</lombok.version>
 
         <spring-boot-starter-aop.version>1.9.5</spring-boot-starter-aop.version>
         <sharding-jdbc-core.version>2.0.3</sharding-jdbc-core.version>
@@ -165,6 +165,25 @@
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>swagger-bootstrap-ui</artifactId>
+                <version>${swagger-bootstrap-ui.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
             </dependency>
         </dependencies>
     </dependencyManagement>
