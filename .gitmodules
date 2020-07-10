@@ -7,3 +7,9 @@
 [submodule "buyCars-service"]
 	path = buyCars-service
 	url = git@10.90.60.209:web/buyCars-service.git
+[submodule "hx-core"]
+	path = hx-core
+	url = git@10.90.60.209:web/hx-core.git
+[submodule "pubnet-service"]
+	path = pubnet-service
+	url = git@10.90.60.209:web/pubnet-service.git
