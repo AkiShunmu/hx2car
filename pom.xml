@@ -17,11 +17,13 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>hx-core</module>
         <module>buyCars-service</module>
         <module>saleCars-service</module>
         <module>vehicle-service</module>
-        <module>hx-core</module>
         <module>pubnet-service</module>
+        <module>send-service</module>
+        <module>scheduler-service</module>
     </modules>
 
     <properties>
