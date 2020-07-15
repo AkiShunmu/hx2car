@@ -24,6 +24,7 @@
         <module>pubnet-service</module>
         <module>send-service</module>
         <module>scheduler-service</module>
+        <module>mongodb-service</module>
     </modules>
 
     <properties>
