@@ -19,3 +19,6 @@
 [submodule "scheduler-service"]
 	path = scheduler-service
 	url = git@10.90.60.209:web/scheduler-service.git
+[submodule "mongodb-service"]
+	path = mongodb-service
+	url = git@10.90.60.209:web/mongodb-service.git
