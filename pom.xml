@@ -17,6 +17,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>hx-common</module>
         <module>hx-core</module>
         <module>buyCars-service</module>
         <module>saleCars-service</module>
