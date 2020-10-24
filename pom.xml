@@ -12,12 +12,11 @@
 
     <groupId>com.hx2car</groupId>
     <artifactId>hx2car</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 
     <packaging>pom</packaging>
 
     <modules>
-        <module>hx-common</module>
         <module>hx-core</module>
         <module>buyCars-service</module>
         <module>saleCars-service</module>
@@ -34,7 +33,7 @@
 
         <commons-httpclinet.version>3.1</commons-httpclinet.version>
         <fastjson.version>1.2.9</fastjson.version>
-        <hxcore.version>0.1.7</hxcore.version>
+        <hxcore.version>0.2.1</hxcore.version>
         <dubbo-spring-boot-starter.version>0.2.0</dubbo-spring-boot-starter.version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
@@ -67,6 +66,16 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency><!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-logging -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+            <version>2.3.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>2.0.0-alpha1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -78,10 +87,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
