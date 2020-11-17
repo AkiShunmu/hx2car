@@ -24,4 +24,4 @@
 	url = git@10.90.60.209:web/mongodb-service.git
 [submodule "hx-common"]
 	path = hx-common
-	url = git@10.90.60.209:web/hx-common
+	url = git@10.90.60.209:web/hx-common.git
