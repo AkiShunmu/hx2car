@@ -12,11 +12,12 @@
 
     <groupId>com.hx2car</groupId>
     <artifactId>hx2car</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
 
     <packaging>pom</packaging>
 
     <modules>
+        <module>hx-common</module>
         <module>hx-core</module>
         <module>buyCars-service</module>
         <module>saleCars-service</module>
@@ -25,6 +26,7 @@
         <module>send-service</module>
         <module>scheduler-service</module>
         <module>mongodb-service</module>
+        <module>weibao</module>
     </modules>
 
     <properties>
