@@ -36,3 +36,4 @@ build/
 ### VS Code ###
 .vscode/
 /UML/
+/weibao/weibao-service.iml
