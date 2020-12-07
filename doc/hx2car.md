@@ -1,9 +1,21 @@
 # [hx2car](http://www.hx2car.com)
 
-# Modules
+## 项目环境
+
+- 拉去项目
+  - git clone git@10.90.60.209:web/hx2car.git --recurse-submodules
+- 配置文件
+  - local 本地开发环境、229环境
+  - dev 测试环境
+  - pro 线上环境
+- 启动脚本
+  - service.sh
+  - 使用方式
+    - ./service.sh dev restart pubnet-service(脚本 配置文件 启动方式项目名称)
+
+## Modules
 
 * doc  存放说明文档
-
 * script    存放可执行的脚本文件
 * hx-common 公共依赖
 * hx-core   华夏核心包，暂时用来解决项目之间依赖
@@ -16,10 +28,9 @@
 * vehicle-service   车辆工程，提供对外车辆暴露接口和车辆服务
 * saleCars-service  卖车工程，提供对外卖车暴露接口和卖车服务
 
-# Project structure
+## Project structure
 
 * base 该包下存放所有基础类
-
 * dal 该包下提供所有数据获取的底层操作，包括不限于数据库、缓存、es
 * config 该包下存放所有配置相关的
     * sharding 分库分表的相关配置
@@ -36,10 +47,9 @@
     * 对service层通用能力的下沉，如换成方案、中间件通用处理；
     * 与dal层交互，对多个dao的组合使用。
 
-# Coding specification
+## Coding specification
 
 * 使用linux换行符。
-
 * 缩进（包含空行）和上一行保持一致。
 * 类声明后与下面的变量或方法之间需要空一行。
 * 不应有无意义的空行。请提炼私有方法，代替方法体过长或代码段逻辑闭环而采用的空行间隔。
@@ -64,63 +74,37 @@
 * 公开的类和方法必须有javadoc，其他类和方法以及覆盖自父类的方法无需javadoc。
 * 通过checkStyle检查（强制），模板位置在hx2car\script\checkstyle.xml，请使用checkstyle 8.8运行
 
-# Parameter validation
+## Parameter validation
 
-## open-service 必须开启参数效验 @Service(validation = "true")
+**open-service 必须开启参数效验 @Service(validation = "true")**
 
-空检查
-@Null 验证对象是否为null
-
-@NotNull 验证对象是否不为null, 无法查检长度为0的字符串
-
-@NotBlank 检查约束字符串是不是Null还有被Trim的长度是否大于0,只对字符串,且会去掉前后空格.
-
-@NotEmpty 检查约束元素是否为NULL或者是EMPTY.
-
-Booelan检查
-@AssertTrue 验证 Boolean 对象是否为 true
-
-@AssertFalse 验证 Boolean 对象是否为 false
-
-长度检查
-@Size(min=, max=) 验证对象（Array,Collection,Map,String）长度是否在给定的范围之内
-
-@Length(min=, max=) Validates that the annotated string is between min and max included.
-
-日期检查
-@Past 验证 Date 和 Calendar 对象是否在当前时间之前
-
-@Future 验证 Date 和 Calendar 对象是否在当前时间之后
-
-@Pattern 验证 String 对象是否符合正则表达式的规则
-
-数值检查，建议使用在Stirng,Integer类型，不建议使用在int类型上，因为表单值为“”时无法转换为int，但可以转换为Stirng为”“,Integer为null
-@Min 验证 Number 和 String 对象是否大等于指定的值
-
-@Max 验证 Number 和 String 对象是否小等于指定的值
-
-@DecimalMax 被标注的值必须不大于约束中指定的最大值. 这个约束的参数是一个通过BigDecimal定义的最大值的字符串表示.小数存在精度
-
-@DecimalMin 被标注的值必须不小于约束中指定的最小值. 这个约束的参数是一个通过BigDecimal定义的最小值的字符串表示.小数存在精度
-
-@Digits 验证 Number 和 String 的构成是否合法
-
-@Digits(integer=,fraction=) 验证字符串是否是符合指定格式的数字，interger指定整数精度，fraction指定小数精度。
-
-@Range(min=, max=) Checks whether the annotated value lies between (inclusive) the specified minimum and maximum.
-
-@Range(min=10000,max=50000,message=”range.bean.wage”)
-private BigDecimal wage;
-
-@Valid 递归的对关联对象进行校验, 如果关联对象是个集合或者数组,那么对其中的元素进行递归校验,如果是一个map,则对其中的值部分进行校验.(是否进行递归验证)
-@CreditCardNumber信用卡验证
-
-@Email 验证是否是邮件地址，如果为null,不进行验证，算通过验证。
-
-@ScriptAssert(lang= ,script=, alias=)
-
-@URL(protocol=,host=, port=,regexp=, flags=)
-
-
-        
-
+- 空检查
+  - @Null 验证对象是否为null
+  - @NotNull 验证对象是否不为null, 无法查检长度为0的字符串
+  - @NotBlank 检查约束字符串是不是Null还有被Trim的长度是否大于0,只对字符串,且会去掉前后空格.
+  - @NotEmpty 检查约束元素是否为NULL或者是EMPTY.
+- Booelan检查
+  - @AssertTrue 验证 Boolean 对象是否为 true
+  - @AssertFalse 验证 Boolean 对象是否为 false
+- 长度检查
+  - @Size(min=, max=) 验证对象（Array,Collection,Map,String）长度是否在给定的范围之内
+  - @Length(min=, max=) Validates that the annotated string is between min and max included.
+- 日期检查
+  - @Past 验证 Date 和 Calendar 对象是否在当前时间之前
+  - @Future 验证 Date 和 Calendar 对象是否在当前时间之后
+  - @Pattern 验证 String 对象是否符合正则表达式的规则
+- 数值检查
+  - 建议使用在Stirng,Integer类型，不建议使用在int类型上，因为表单值为“”时无法转换为int，但可以转换为Stirng为”“,Integer为null
+  - @Min 验证 Number 和 String 对象是否大等于指定的值
+  - @Max 验证 Number 和 String 对象是否小等于指定的值
+  - @DecimalMax 被标注的值必须不大于约束中指定的最大值. 这个约束的参数是一个通过BigDecimal定义的最大值的字符串表示.小数存在精度
+  - @DecimalMin 被标注的值必须不小于约束中指定的最小值. 这个约束的参数是一个通过BigDecimal定义的最小值的字符串表示.小数存在精度
+  - @Digits 验证 Number 和 String 的构成是否合法
+  - @Digits(integer=,fraction=) 验证字符串是否是符合指定格式的数字，interger指定整数精度，fraction指定小数精度。
+  - @Range(min=, max=) Checks whether the annotated value lies between (inclusive) the specified minimum and maximum.
+  - @Range(min=10000,max=50000,message=”range.bean.wage”)
+  - @Valid 递归的对关联对象进行校验, 如果关联对象是个集合或者数组,那么对其中的元素进行递归校验,如果是一个map,则对其中的值部分进行校验.(是否进行递归验证)
+  - @CreditCardNumber信用卡验证
+  - @Email 验证是否是邮件地址，如果为null,不进行验证，算通过验证。
+  - @ScriptAssert(lang= ,script=, alias=)
+  - @URL(protocol=,host=, port=,regexp=, flags=)
