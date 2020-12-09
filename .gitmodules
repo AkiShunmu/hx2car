@@ -28,9 +28,6 @@
 [submodule "weibao"]
 	path = weibao
 	url = git@10.90.60.209:web/weibao.git
-[submodule "hx2car-api"]
-	path = hx2car-api
-	url = git@10.90.60.209:web/hx2car-api.git
 [submodule "hx2car-service"]
 	path = hx2car-service
 	url = git@10.90.60.209:web/hx2car-service.git
