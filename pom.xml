@@ -4,12 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.1.RELEASE</version>
-    </parent>
-
     <groupId>com.hx2car</groupId>
     <artifactId>hx2car</artifactId>
     <version>1.0.6</version>
@@ -17,16 +11,11 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>hx-common</module>
-        <module>hx-core</module>
-        <module>buyCars-service</module>
-        <module>saleCars-service</module>
-        <module>vehicle-service</module>
-        <module>pubnet-service</module>
-        <module>send-service</module>
-        <module>scheduler-service</module>
-        <module>mongodb-service</module>
-        <module>weibao</module>
+        <module>hx2car-core</module>
+        <module>hx2car-common</module>
+        <module>hx2car-service</module>
+        <module>hx2car-api</module>
+        <module>hx2car-scheduler</module>
     </modules>
 
     <properties>
@@ -49,41 +38,52 @@
         <mina-core.version>1.1.7</mina-core.version>
         <com.google.guava.version>29.0-jre</com.google.guava.version>
         <log4j.version>1.2.16</log4j.version>
-
-        <tair-client.version>2.3.4.49</tair-client.version>
-        <tair.tair-client.version>2.3.4</tair.tair-client.version>
         <common-tair.version>2.2.4.6</common-tair.version>
         <jsr305.version>3.0.2</jsr305.version>
     </properties>
 
     <dependencies>
-        <!-- SpringBoot依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency><!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-logging -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
-            <version>2.3.4.RELEASE</version>
-        </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.29</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.29</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-logging</artifactId>-->
+<!--            <version>2.2.1.RELEASE</version>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.apache.logging.log4j</groupId>-->
+<!--                    <artifactId>log4j-to-slf4j</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.alibaba.boot</groupId>
@@ -100,11 +100,6 @@
                 <version>${commons-httpclinet.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.hx-core</groupId>
                 <artifactId>hxcore</artifactId>
                 <version>${hxcore.version}</version>
@@ -119,6 +114,7 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
+                <optional>true</optional>
             </dependency>
 
             <!-- sharding-jdbc-core -->
@@ -137,21 +133,6 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.taobao</groupId>
-                <artifactId>tair-client</artifactId>
-                <version>${tair-client.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.taobao</groupId>
-                <artifactId>common-tair</artifactId>
-                <version>${common-tair.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.taobao.tair</groupId>
-                <artifactId>tair-client</artifactId>
-                <version>${tair.tair-client.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
@@ -174,23 +155,75 @@
                 <version>${log4j.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${springfox-swagger2.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>2.2.1.RELEASE</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.junit.vintage</groupId>
+                        <artifactId>junit-vintage-engine</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${springfox-swagger2.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>2.2.1.RELEASE</version>
             </dependency>
             <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>swagger-bootstrap-ui</artifactId>
-                <version>${swagger-bootstrap-ui.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+                <version>2.2.1.RELEASE</version>
             </dependency>
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-mongodb</artifactId>
+                <version>2.2.1.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>2.2.1.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+                <version>2.2.1.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>2.2.1.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>5.2.1.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>2.0.0-alpha1</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>1.2.3</version>
+            </dependency>
+            <!-- dubbo -->
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>0.2.0</version>
+            </dependency>
+            <!-- SpringBoot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+                <version>2.2.1.RELEASE</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -212,6 +245,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.2.1.RELEASE</version>
                 <configuration>
                     <classifier>exec</classifier>
                 </configuration>
@@ -219,7 +253,9 @@
 
             <!-- 把jar包拷贝到指定目录位置 -->
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
                 <executions>
                     <execution>
                         <id>copy</id>
@@ -238,6 +274,18 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
             </plugin>
         </plugins>
     </build>

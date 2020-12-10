@@ -1,39 +1,8 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**
-!**/src/test/**
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+/.idea/
 *.iml
-*.ipr
-*.classpath
-*.project
-*.prefs
-.DS_Store
-
-
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-
-### VS Code ###
-.vscode/
-/UML/
-/weibao/weibao-service.iml
+*/*.iml
+*/*/*.iml
+*/target
+*/*/target/
+*/*/*/target
+/hx2car-service/hx2car-service.iml
