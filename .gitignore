@@ -4,6 +4,6 @@
 */*.iml
 */*/*.iml
 
-*/target
-*/*/target/
-*/*/*/target
+/target/
+/*/target/
+/*/*/target/
