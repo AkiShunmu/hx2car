@@ -1,8 +1,9 @@
 /.idea/
+
 *.iml
 */*.iml
 */*/*.iml
+
 */target
 */*/target/
 */*/*/target
-/hx2car-service/hx2car-service.iml
