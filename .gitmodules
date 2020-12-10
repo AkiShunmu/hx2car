@@ -1,36 +1,15 @@
-[submodule "vehicle-service"]
-	path = vehicle-service
-	url = git@10.90.60.209:web/vehicle-service
-[submodule "saleCars-service"]
-	path = saleCars-service
-	url = git@10.90.60.209:web/saleCars-service.git
-[submodule "buyCars-service"]
-	path = buyCars-service
-	url = git@10.90.60.209:web/buyCars-service.git
-[submodule "hx-core"]
-	path = hx-core
-	url = git@10.90.60.209:web/hx-core.git
-[submodule "pubnet-service"]
-	path = pubnet-service
-	url = git@10.90.60.209:web/pubnet-service.git
-[submodule "send-service"]
-	path = send-service
-	url = git@10.90.60.209:web/send-service.git
-[submodule "scheduler-service"]
-	path = scheduler-service
-	url = git@10.90.60.209:web/scheduler-service.git
-[submodule "mongodb-service"]
-	path = mongodb-service
-	url = git@10.90.60.209:web/mongodb-service.git
-[submodule "hx-common"]
-	path = hx-common
-	url = git@10.90.60.209:web/hx-common.git
-[submodule "weibao"]
-	path = weibao
-	url = git@10.90.60.209:web/weibao.git
 [submodule "hx2car-service"]
 	path = hx2car-service
 	url = git@10.90.60.209:web/hx2car-service.git
 [submodule "hx2car-api"]
 	path = hx2car-api
 	url = git@10.90.60.209:web/hx2car-api.git
+[submodule "hx2car-core"]
+	path = hx2car-core
+	url = git@10.90.60.209:web/hx-core.git
+[submodule "hx2car-common"]
+	path = hx2car-common
+	url = git@10.90.60.209:web/hx-common.git
+[submodule "hx2car-scheduler"]
+	path = hx2car-scheduler
+	url = git@10.90.60.209:web/scheduler-service.git
