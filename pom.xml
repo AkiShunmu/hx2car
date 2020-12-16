@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.hx2car</groupId>
     <artifactId>hx2car</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
 
     <packaging>pom</packaging>
 
