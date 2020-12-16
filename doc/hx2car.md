@@ -12,6 +12,8 @@
   - service.sh
   - 使用方式
     - ./service.sh dev restart pubnet-service(脚本 配置文件 启动方式项目名称)
+    - 配置文件 pro 线上 local 开发以及229 dev 测试
+    - 启动方式 start 启动 stop 停止 restart 重启 
 
 ## Modules
 
