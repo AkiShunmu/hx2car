@@ -13,3 +13,6 @@
 [submodule "hx2car-scheduler"]
 	path = hx2car-scheduler
 	url = git@10.90.60.209:web/scheduler-service.git
+[submodule "hx2car-cache"]
+	path = hx2car-cache
+	url = git@10.90.60.209:web/hx2car-cache.git

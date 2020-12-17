@@ -16,6 +16,7 @@
 
     <modules>
         <module>hx2car-core</module>
+        <module>hx2car-cache</module>
         <module>hx2car-common</module>
         <module>hx2car-service</module>
         <module>hx2car-api</module>
