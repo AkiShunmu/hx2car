@@ -15,6 +15,51 @@
     - 配置文件 pro 线上 local 开发以及229 dev 测试
     - 启动方式 start 启动 stop 停止 restart 重启 
 
+## 数据接口返回结构
+
+```
+{
+	"fail": false,
+	"code": "00000",
+	"data": {
+		"pageData": {
+			"last": true,
+			"records": [{
+				"image": "http://img.hx2car.com/upload/newimg1/M02/56/D2/Clo8w18g.jpg",
+				"money": 333.0,
+				"createTime": "2020-07-28 19:07:16",
+				"id": 1395468324,
+				"title": "西雅特 LEON  2012款 2.0TSI CUPRA",
+				"class": "com.hx2car.buyCarsApi.dto.user.center.UserWeChatCarDto"
+			}],
+			"totalPages": 1,
+			"pageSize": 10,
+			"currentPage": 0,
+			"class": "com.hx2car.common.base.PageData",
+			"totalElements": 1
+		},
+        "qwewqe": 2213
+	},
+	"success": true,
+	"error": "",
+	"message": "获取用户微信车库车辆列表成功"
+}
+```
+
+- data中一共包含以下四种对象
+  - record（单个对象）
+  - records（列表）
+  - pageData（分页）
+  - 自定义数据
+
+## 打包步骤
+
+- 以当前最新代码分支为0.2.19为例
+- 将代码合并到master
+- 从master剪出名字为0.2.20的分支
+- 将分支中的pom的版本修改为0.2.20
+- 打包分支代码，部署到私服
+
 ## Modules
 
 * doc  存放说明文档
