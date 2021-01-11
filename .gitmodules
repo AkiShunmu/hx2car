@@ -16,3 +16,6 @@
 [submodule "hx2car-cache"]
 	path = hx2car-cache
 	url = git@10.90.60.209:web/hx2car-cache.git
+[submodule "hx2car-starter"]
+	path = hx2car-starter
+	url = git@10.90.60.209:web/hx2car-starter.git

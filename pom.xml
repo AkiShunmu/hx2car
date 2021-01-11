@@ -2,11 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-<!--    <parent>-->
-<!--        <groupId>org.springframework.boot</groupId>-->
-<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
-<!--        <version>2.2.1.RELEASE</version>-->
-<!--    </parent>-->
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.hx2car</groupId>
     <artifactId>hx2car</artifactId>
@@ -18,6 +13,7 @@
         <module>hx2car-core</module>
         <module>hx2car-cache</module>
         <module>hx2car-common</module>
+        <module>hx2car-starter</module>
         <module>hx2car-service</module>
         <module>hx2car-api</module>
         <module>hx2car-scheduler</module>
