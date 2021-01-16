@@ -13,7 +13,13 @@
   - 使用方式
     - ./service.sh dev restart pubnet-service(脚本 配置文件 启动方式项目名称)
     - 配置文件 pro 线上 local 开发以及229 dev 测试
-    - 启动方式 start 启动 stop 停止 restart 重启 
+    - 启动方式 start 启动 stop 停止 restart 重启
+
+## soul
+
+- 250:http://10.90.60.101:19095/#/home
+- 221(本地):http://10.90.60.221:9095/#/home
+- 线上:http://10.90.60.101:9095/#/home
 
 ## 数据接口返回结构
 
@@ -53,19 +59,19 @@
 * base 该包下存放所有基础类
 * dal 该包下提供所有数据获取的底层操作，包括不限于数据库、缓存、es
 * config 该包下存放所有配置相关的
-    * sharding 分库分表的相关配置
+  * sharding 分库分表的相关配置
 * service 该包下提供本工程相关服务
 * open-service 该包下提供本工程对外暴露的接口
-* bean 
-    * po (persistent object) 持久对象。与数据库里表字段一一对应。PO是一些属性，以及set和get方法组成。一般情况下，一个表，对应一个PO。是直接与操作数据库的crud相关。
-    * vo (view object) 通常用于业务层之间的数据传递，和PO一样也是仅仅包含数据而已。但应是抽象出的业务对象，可以和表对应，也可以不，这根据业务的需要。对于页面上要展示的对象，可以封装一个VO对象，将所需数据封装进去。
-    * bo (bussiness object) 业务对象。封装业务逻辑的 java 对象 , 通过调用 DAO 方法 , 结合 PO,VO 进行业务操作
-    * dto (data trasfer object)数据传输对象。主要用于远程调用等需要大量传输对象的地方。
+* bean
+  * po (persistent object) 持久对象。与数据库里表字段一一对应。PO是一些属性，以及set和get方法组成。一般情况下，一个表，对应一个PO。是直接与操作数据库的crud相关。
+  * vo (view object) 通常用于业务层之间的数据传递，和PO一样也是仅仅包含数据而已。但应是抽象出的业务对象，可以和表对应，也可以不，这根据业务的需要。对于页面上要展示的对象，可以封装一个VO对象，将所需数据封装进去。
+  * bo (bussiness object) 业务对象。封装业务逻辑的 java 对象 , 通过调用 DAO 方法 , 结合 PO,VO 进行业务操作
+  * dto (data trasfer object)数据传输对象。主要用于远程调用等需要大量传输对象的地方。
 * util 存放所有的工具类
 * manage 通用业务处理层，它有如下特征：
-    * 对第三方平台封装的层，预处理返回结果及转化异常信息；
-    * 对service层通用能力的下沉，如换成方案、中间件通用处理；
-    * 与dal层交互，对多个dao的组合使用。
+  * 对第三方平台封装的层，预处理返回结果及转化异常信息；
+  * 对service层通用能力的下沉，如换成方案、中间件通用处理；
+  * 与dal层交互，对多个dao的组合使用。
 
 ## Coding specification
 
