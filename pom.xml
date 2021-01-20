@@ -27,9 +27,6 @@
         <fastjson.version>1.2.75</fastjson.version>
         <hxcore.version>0.2.13</hxcore.version>
         <dubbo-spring-boot-starter.version>0.2.0</dubbo-spring-boot-starter.version>
-        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
-        <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
-        <swagger-bootstrap-ui.version>1.9.5</swagger-bootstrap-ui.version>
         <lombok.version>1.18.10</lombok.version>
 
         <spring-boot-starter-aop.version>1.9.5</spring-boot-starter-aop.version>
@@ -39,7 +36,6 @@
         <mina-core.version>1.1.7</mina-core.version>
         <com.google.guava.version>29.0-jre</com.google.guava.version>
         <log4j.version>1.2.16</log4j.version>
-        <common-tair.version>2.2.4.6</common-tair.version>
         <jsr305.version>3.0.2</jsr305.version>
     </properties>
 
