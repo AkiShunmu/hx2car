@@ -17,6 +17,7 @@
         <module>hx2car-service</module>
         <module>hx2car-api</module>
         <module>hx2car-scheduler</module>
+        <module>hx2car-pay</module>
     </modules>
 
     <properties>
