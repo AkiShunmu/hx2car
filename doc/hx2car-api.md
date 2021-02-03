@@ -1,8 +1,4 @@
-## API接口返回体
-
-- 必须返回Result
-
-## API请求体的封装与使用
+## API请求体的封装
 
 - 必须继承基类BaseVo
 - 怎么获取请求头中的数据
@@ -12,6 +8,17 @@
 - 分页查询参数
     - 禁止自己写pageSize、currentPage在vo中，必须在VO中添加**PageVo**参数，通过PageVo传递分页参数
     - 从API向service传递分页参数时，建议通过PageVo传参
+
+## API接口返回体
+
+- Result
+    - `所有API返回体必须使用Result`
+    - 通过Result.buildSuccess,Result.buildError,Result.buildFail构建返回体
+    - 通过buildData(value)绑定数据
+    - buildData(key, value)方法只有当buildData绑定了PageData数据以后才能使用
+- 分页返回
+    - `所有分页返回必须使用PageData`
+    - PageData提供of方法，可以将jpa的Page转换为PageData
 
 ## API常用注解
 
