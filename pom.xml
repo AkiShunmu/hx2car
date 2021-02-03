@@ -6,7 +6,6 @@
     <groupId>com.hx2car</groupId>
     <artifactId>hx2car</artifactId>
     <version>1.0.7</version>
-
     <packaging>pom</packaging>
 
     <modules>
