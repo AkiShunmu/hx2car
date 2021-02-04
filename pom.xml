@@ -6,7 +6,6 @@
     <groupId>com.hx2car</groupId>
     <artifactId>hx2car</artifactId>
     <version>1.0.7</version>
-
     <packaging>pom</packaging>
 
     <modules>
@@ -17,6 +16,7 @@
         <module>hx2car-service</module>
         <module>hx2car-api</module>
         <module>hx2car-scheduler</module>
+        <module>hx2car-pay</module>
     </modules>
 
     <properties>
