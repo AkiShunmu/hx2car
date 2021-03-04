@@ -22,3 +22,6 @@
 [submodule "hx2car-pay"]
 	path = hx2car-pay
 	url = git@10.90.60.209:web/hx2car-pay.git
+[submodule "hx2car-order"]
+	path = hx2car-order
+	url = git@10.90.60.209:web/hx2car-order.git
