@@ -14,7 +14,7 @@
 - 然后我们自定义一个工厂类BaseRepoFactoryBean，通过这个工厂类生成BaseRepoImpl
 - 最后通过EnableJpaRepositories指定Repo的代理生成工厂为我们自定义的工厂，这样我们就将原有的JPA的公用方法的实现类以及工厂类全部替换为了我们的自定义的类
 
-## 扩展共有方法
+## 扩展公有方法
 
 - 现在BaseRepo接口中添加方法
 - 然后在BaseRepoImpl中实现即可
