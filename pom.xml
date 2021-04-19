@@ -13,14 +13,15 @@
         <module>hx2car-cache</module>
         <module>hx2car-common</module>
         <module>hx2car-starter</module>
+        <module>hx2car-basic</module>
         <module>hx2car-service</module>
         <module>hx2car-api</module>
-        <module>hx2car-scheduler</module>
         <module>hx2car-pay</module>
-        <module>hx2car-order</module>
+        <module>hx2car-scheduler</module>
     </modules>
 
     <properties>
+        <hx2car.version>1.0.7</hx2car.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
 
