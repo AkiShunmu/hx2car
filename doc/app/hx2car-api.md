@@ -1,13 +1,13 @@
 ## API请求体的封装
 
-- 必须继承基类BaseVo
+- 必须继承基类BaseDTO
 - 怎么获取请求头中的数据
-    - 所有HTTP请求中的请求经过**SOUL**网关时全部回转存到BaseVo中的**headers**中
-    - 在**BaseVo**中定义对应的**HeaderName**枚举类型
+    - 所有HTTP请求中的请求经过**SOUL**网关时全部回转存到BaseDTO中的**headers**中
+    - 在**BaseDTO**中定义对应的**HeaderName**枚举类型
     - 通过**getHeader**方法获取
 - 分页查询参数
-    - 禁止自己写pageSize、currentPage在vo中，必须在VO中添加**PageVo**参数，通过PageVo传递分页参数
-    - 从API向service传递分页参数时，建议通过PageVo传参
+    - 禁止自己写pageSize、currentPage在vo中，必须在DTO中添加**PageDTO**参数，通过PageDTO传递分页参数
+    - 从API向service传递分页参数时，建议通过PageDTO传参
 
 ## API接口返回体
 
