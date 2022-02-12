@@ -6,19 +6,29 @@
 - AnalysisService
   - 文本解析得到车型
   - 文本解析得到地区
-
+## Assess
+- AssessService
+  - 评估车辆服务
 ## car对象转换
 - CarChangeService
   - DDBCAR CarEsDo 转为可以使用的SimpleCar
-  
+- CarModifyService
+  - 修改车辆服务
 ## tag
 - CarTagMarkService
   - 车辆大屏数据标签
 - CarTagService
   - 车辆标签
-
 ## vin
 - VinService
   - VIN码解析方法
   - 第三方车型id获取车型参数配置
   - 根据VIN获取车型参数配置
+
+## search
+- BiddingService
+  - 竞价车服务
+- CarCountService
+  - 车辆数量统计服务
+- CarRecommendService
+  - 补量车辆服务
